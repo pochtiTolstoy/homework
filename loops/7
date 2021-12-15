@@ -1,0 +1,28 @@
+//Перевести заданное целое число (<4000) в систему римского счета.
+#include <iostream>
+
+double dRand(double x, double R)
+{
+    return (double)(rand()) / ((double)(RAND_MAX/(R)));
+}
+
+int main() {
+    double R;
+    double x, y;
+    int inCircle=0;
+    int inSquare=0;
+    std::cin >> R;
+    for (int i = 0; i < 10000000; ++i) {
+        x = dRand(rand(), R);
+        y = dRand(rand(), R);
+        // std::cout << x << " " << y << std::endl;
+        if (x*x + y*y <= R)
+        {
+            inCircle += 1;
+        }
+        inSquare += 1;
+    }
+    std::cout << inSquare << "\n";
+    std::cout << 4 * (inCircle/(double)(inSquare)) << std::endl;
+    return 0;
+}
