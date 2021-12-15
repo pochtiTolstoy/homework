@@ -1,0 +1,19 @@
+//Для заданных значений n и x вычислить выражение: S = sin(x) + sin(sin(x)) + ... + sin(sin( ... (sin (x)) ... ))
+#include <iostream>
+#include <cmath>
+
+int main() {
+    int n;
+    double x;
+    std::cout << "Введите n и x: " << std::endl;
+    std::cin >> n >> x;
+
+    double s = 0;
+    double num = sin(x);
+    for (int i = 1; i <= n; ++i)
+    {
+        s += num;
+        num = sin(num);
+    }
+    std::cout << s;
+}
