@@ -1,0 +1,17 @@
+//Для заданного значения n вычислить выражение: S = 1 + 1/2 + 1/4 + ... + 1/2^n
+#include <iostream>
+
+
+int main() {
+    int n;
+    std::cin >> n;
+    double s = 1;
+    double term = 0.5;
+    for(int i=1; i <= n; ++i)
+    {
+        s += term;
+        term*=0.5;
+    }
+    std::cout << s << std::endl;
+    return 0;
+}
