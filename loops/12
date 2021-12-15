@@ -1,0 +1,47 @@
+#include <iostream>
+
+int main() {
+    int n, sis;
+    std::cin >> n >> sis;
+
+    int result = 0;
+    int i = 1;
+    if (sis < 10)
+    {
+        while(n)
+        {
+            result += i * (n % sis);
+            i *= 10; //двигаем разряд
+            n /= sis;
+        }
+    }
+    else if (sis == 10)
+    {
+        std::cout << n << std::endl;
+    }
+    else
+    {
+        while(n)
+        {
+            int i = 1;
+            int temp = n;
+            while(temp >= sis)
+            {
+                temp /= sis;
+                i *= sis;
+            }
+            n -= (i*temp); 
+
+            if (temp >= 10)
+            {
+                std::cout << (char)(55 + temp);
+            }
+            else {
+                std::cout << (temp);
+            }   
+        }
+    }
+
+
+    return 0;
+}
