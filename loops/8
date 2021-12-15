@@ -1,0 +1,18 @@
+//Вычислить сумму и произведение цифр целого числа, введенного пользователем
+#include <iostream>
+
+int main() {
+    int n;
+    std::cout << "Введите число: " << std::endl;
+    std::cin >> n;
+    int s = 0;
+    int a = 1;
+    while (n > 0)
+    {
+        s += n % 10;
+        a *= n % 10;
+        n /= 10;
+    }
+    std::cout << s << " " << a << std::endl;
+
+}
