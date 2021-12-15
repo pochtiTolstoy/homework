@@ -1,0 +1,29 @@
+//Вычислить сумму 1+x+x^2+x^3+... в заданной точке до тех пор, пока значение очередного слагаемого по модулю больше заданного eps. Сравнить результат с 1/(1-x). x подается в диапазоне (-1,1).
+#include <iostream>
+
+//misc_cpp
+
+
+int main(){
+    double x, eps;
+    do
+    {
+        std::cout << "Введите x в диапозоне (-1, 1): ";
+        std::cin >> x;
+    } while (x >= 1 || x <= -1);
+    std::cout << "Введите eps: ";
+    std::cin >> eps;
+
+    double s = 0;
+    double term = 1;
+    while (term > eps)
+    {
+        s += term;
+        term *= x;
+    }
+    std::cout << "Сумма: " << s << "\t 1/(1-x): " << 1/(1-x) << std::endl;
+
+    
+    
+    return 0;
+}
