@@ -8,3 +8,10 @@ bool is_square(int n)
   }
   return false;
 }
+
+// bool is_square(int n) {
+//   if (n < 0) return false;
+//   int square = sqrt(n);
+//   return square * square == n;
+// }
+//loop doesn't make sense
