@@ -3,7 +3,7 @@
 int main() 
 {
     int n;
-    int max = 0;
+    int max = INT_MIN;
     int elem1, elem2;
     std::cin >> n;
     int *arr = new int[n];
