@@ -3,18 +3,22 @@
 
 bool firstCircle(double x, double y)
 {
-    if(y<=0 && x>=-2 && x <= 0 && y >= -sqrt(1-(x+1)*(x+1)))
+    if(y<=0 && x>=-2 && x <= 0)
+    // Если этот if будет выполнен, то при любом x из
+    // этого дипозона под корнем не будет отрицательного значения
     {
-        return true;
+        if (y >= -sqrt(1-(x+1)*(x+1))) return true;
     }
     return false;
 }
 
 bool secondCircle(double x, double y)
 {
-    if(y<=0 && x>=-2 && x <= 0 && y >= -sqrt(1-(x-1)*(x-1)))
+    if(y<=0 && x <=2 && x >= 0)
+    // Если этот if будет выполнен, то при любом x из
+    // этого дипозона под корнем не будет отрицательного значения
     {
-        return true;
+        if (y >= -sqrt(1-(x-1)*(x-1))) return true;
     }
     return false;
 }
