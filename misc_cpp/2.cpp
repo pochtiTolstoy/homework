@@ -15,7 +15,8 @@ int main(){
     std::cout << "Введите c: ";
     std::cin >> c;
     if (a == 0) {
-        std::cout << "a=0 - уравнение не квадратное" <<std::endl;
+        x1 = -c/b;
+        std::cout << "x = " << x1 << std::endl;
     }else
     {
         d = b*b - 4*a*c;
