@@ -4,6 +4,7 @@ int main()
 {
     int n;
     int max = 0;
+    int elem1, elem2;
     std::cin >> n;
     int *arr = new int[n];
 
@@ -17,8 +18,12 @@ int main()
         if (arr[i]+arr[i+1] > max) 
         {
             max = arr[i]+arr[i+1];
+            elem1 = arr[i];
+            elem2 = arr[i+1];
         }
     }
-    std::cout << max << "\n";
+    std::cout <<"Max: " << max <<" Elem1 " << elem1 << " Elem2 " << elem2 << "\n";
+
+    delete[] arr;
     return 0;
 }
