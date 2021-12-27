@@ -1,13 +1,12 @@
 #include <iostream>
 #include <cmath>
+// no sqrt club
 
 bool firstCircle(double x, double y)
 {
     if(y<=0 && x>=-2 && x <= 0)
-    // Если этот if будет выполнен, то при любом x из
-    // этого дипозона под корнем не будет отрицательного значения
     {
-        if (y >= -sqrt(1-(x+1)*(x+1))) return true;
+        if ((x+1)*(x+1) + y*y <= 1) return true;
     }
     return false;
 }
@@ -15,10 +14,8 @@ bool firstCircle(double x, double y)
 bool secondCircle(double x, double y)
 {
     if(y<=0 && x <=2 && x >= 0)
-    // Если этот if будет выполнен, то при любом x из
-    // этого дипозона под корнем не будет отрицательного значения
     {
-        if (y >= -sqrt(1-(x-1)*(x-1))) return true;
+        if ((x-1)*(x-1) + y*y <= 1);
     }
     return false;
 }
