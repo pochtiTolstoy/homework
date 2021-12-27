@@ -3,7 +3,7 @@
 int main() 
 {
     int n;
-    int max = INT_MIN;
+    
     int elem1, elem2;
     std::cin >> n;
     int *arr = new int[n];
@@ -12,7 +12,8 @@ int main()
     {
         std::cin >> arr[i];
     }
-
+    int max = arr[0] + arr[1];
+    
     for(int i = 0; i < n-1; ++i)
     {
         if (arr[i]+arr[i+1] > max) 
