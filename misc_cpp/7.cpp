@@ -1,30 +1,27 @@
 #include <iostream>
-
 #include <cmath>
 
-\\slow
-
-int main() {
-    int R;
-    int counter = 0;
+//Медленно! Но считает :)
+int main()
+{
+    long long int R;
+    long long int counter = 0;
     do 
     {
         std::cout << "Введите целочисленный радиус R<10^6: ";
         std::cin >> R;
     }while(R<=0 && R >= pow(10,6));
 
-    for (int y=R; y>=-R; --y)
+    for (long long int y = R; y > 0; --y)
     {
-        for (int x=-R; x<=R; ++x)
+        for (long long int x = -R; x < 0; ++x)
         {
-            // std::cout << x << y << std::endl;
-            if (x*x + y*y <= R*R)
+            if (x*x + y*y <= R * R)
             {
-                counter += 1;
+                counter += 4;
             }
         }
     }
-    std::cout << counter << std::endl;
-
+    std::cout << counter + 4*R+1 << std::endl;
     return 0;
 }
