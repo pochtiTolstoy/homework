@@ -190,22 +190,22 @@ double** multMatrix(double lambda, double** M, size_t rows, size_t columns)
 }
 
 double** plusMatrix(double** A, double** B, size_t rows, size_t columns) {
-    for (size_t i = 0; r < rows; ++i)
+    for (size_t i = 0; i < rows; ++i)
     {
-        for (size_t j = 0; r < columns; ++j)
+        for (size_t j = 0; i < columns; ++j)
         {
-            A[r][c]+= B[r][c];
+            A[i][j]+= B[i][j];
         }
     }
     return A;
 }
 
 double** minusMatrix(double** A, double** B, size_t rows, size_t columns) {
-    for (size_t i = 0; r < rows; ++i)
+    for (size_t i = 0; i < rows; ++i)
     {
-        for (size_t j = 0; r < columns; ++j)
+        for (size_t j = 0; i < columns; ++j)
         {
-            A[r][c] -= B[r][c];
+            A[i][j] -= B[i][j];
         }
     }
     return A;
@@ -217,17 +217,17 @@ double** multMatrix(double** A, double** B, size_t rowsA, size_t columnsA, size_
     {
         return 0;
     }
-    int** Ans = new int*[rowsA];
+    double** Ans = new double*[rowsA];
     for (int i = 0; i < rowsA; ++i)
     {
-        Ans[i] = new int[columnsB];
+        Ans[i] = new double[columnsB];
     }
     
     for (size_t r = 0; r < rowsA; ++r)
            for (size_t c = 0; c < columnsA; ++c)
            {
                Ans[r][c] = 0;
-               for(size_t k = 0; k < colsA; ++k)
+               for(size_t k = 0; k < columnsA; ++k)
                    Ans[r][c] += (A[r][k] * B[k][c]);
            }
     return Ans;
@@ -249,5 +249,3 @@ double& maximumMatrix(double** M, size_t rows, size_t cols)
             }
     return M[r_max][c_max];
 }
-
-
