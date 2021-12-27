@@ -1,7 +1,8 @@
 #include <iostream>
 #include <cmath>
 
-//Медленно! Но считает :)
+//Мощь! Скорость! Больше скорости!
+
 int main()
 {
     long long int R;
@@ -11,17 +12,23 @@ int main()
         std::cout << "Введите целочисленный радиус R<10^6: ";
         std::cin >> R;
     }while(R<=0 && R >= pow(10,6));
+    
+    long long int squaredR = R*R;
+    long long int squaredY;
 
     for (long long int y = R; y > 0; --y)
     {
+        squaredY = y*y;
+
         for (long long int x = -R; x < 0; ++x)
         {
-            if (x*x + y*y <= R * R)
+            if (x*x + squaredY <= squaredR)
             {
-                counter += 4;
+                break;
             }
+            counter += 4;
         }
     }
-    std::cout << counter + 4*R+1 << std::endl;
+    std::cout << (R*2+1)*(R*2+1) - counter << std::endl;
     return 0;
 }
